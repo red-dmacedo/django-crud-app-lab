@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="center">
+    <h1>Welcome to the Cola Collector!</h1>
+    <section class="logo-container">
+      <img id="dispenser" src="{% static 'images/drink-dispenser.svg' %}" alt="Text reads: Cola Collector" />
+    </section>
+  </div>
+{% endblock %}
