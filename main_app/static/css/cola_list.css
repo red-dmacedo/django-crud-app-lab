@@ -1,0 +1,15 @@
+.card {
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  max-width: 100px;
+  box-shadow: var(--card-box-shadow);
+  color: black;
+}
+
+.brand-img img { 
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}

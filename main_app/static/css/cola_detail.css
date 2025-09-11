@@ -1,0 +1,38 @@
+/* import card and brand-img classes */
+/* @import 'cola_list.css'; */
+
+.page-content {
+  width: 100%;
+}
+
+.card {
+  border-radius: 10px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+  max-width: 250px;
+  box-shadow: var(--card-box-shadow);
+  color: black;
+}
+
+.card h2 {
+  font-size: x-large;
+}
+.card p {
+  font-size: large;
+  font-weight: bold;
+}
+
+.brand-img img { 
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+  font-size: large;
+}

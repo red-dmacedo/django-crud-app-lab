@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/cola_list.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="center">
+    {% if cola_list.count %}
+      <ul class="flex-row-wrap">
+        {% for cola in cola_list %}
+          <a href="{% url 'cola-detail' cola.id %}">
+            <li>
+              <div class="card">
+                <h2>{{ cola.name }}</h2>
+                <p>
+                  <small>{{ cola.brand }}</small>
+                </p>
+                <div class="brand-img">
+                  {% if cola.image_url %}
+                    <img src="{{ cola.image_url }}" alt="Image of the brand of cola" />
+                  {% else %}
+                    <img src="{% static 'images/coca-cola.svg' %}" alt="Default image of a cola brand" />
+                  {% endif %}
+                </div>
+                <p>Fizz Rating: {{ cola.fizz_rating }}/10</p>
+              </div>
+            </li>
+          </a>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <h1>There are no Colas to display</h1>
+    {% endif %}
+  </div>
+{% endblock %}

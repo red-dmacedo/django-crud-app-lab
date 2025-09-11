@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/cola_confirm_delete.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="page-content">
+    <h1>Delete {{ cola.name }}?</h1>
+
+    <form action="" method="post" class="form actions">
+      {% csrf_token %}
+      {% comment %} <button type="button" > {% endcomment %}
+        <a href="{% url 'cola-detail' cola.id %}" class="btn secondary">Cancel</a>
+      {% comment %} </button> {% endcomment %}
+      <button type="submit" class="btn danger">Confirm</button>
+    </form>
+  </div>
+{% endblock %}

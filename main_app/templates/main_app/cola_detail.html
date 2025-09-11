@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/cola_detail.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="page-content center">
+    <div class="card">
+      <h2>{{ cola.name }}</h2>
+      <p>
+        <small>{{ cola.brand }}</small>
+      </p>
+      <div class="brand-img">
+        {% if cola.image_url %}
+          <img src="{{ cola.image_url }}" alt="Image of the brand of cola" />
+        {% else %}
+          <img src="{% static 'images/coca-cola.svg' %}" alt="Default image of a cola brand" />
+        {% endif %}
+      </div>
+      <p>Fizz Rating: {{ cola.fizz_rating }}/10</p>
+    </div>
+    <div class="actions">
+      <a href="{% url 'cola-update' cola.id %}">Edit</a>
+      <a href="{% url 'cola-delete' cola.id %}">Delete</a>
+      {% comment %} <a href="#">Edit</a> {% endcomment %}
+      {% comment %} <a href="#">Delete</a> {% endcomment %}
+    </div>
+  </div>
+{% endblock %}
