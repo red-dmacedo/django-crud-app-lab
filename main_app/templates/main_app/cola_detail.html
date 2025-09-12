@@ -21,10 +21,29 @@
       <p>Fizz Rating: {{ cola.fizz_rating }}/10</p>
     </div>
     <div class="actions">
-      <a href="{% url 'cola-update' cola.id %}">Edit</a>
-      <a href="{% url 'cola-delete' cola.id %}">Delete</a>
-      {% comment %} <a href="#">Edit</a> {% endcomment %}
-      {% comment %} <a href="#">Delete</a> {% endcomment %}
+      <a href="{% url 'cola-update' cola.pk %}">Edit</a>
+      <a href="{% url 'cola-delete' cola.pk %}">Delete</a>
     </div>
+    <div class="list-of-lists">
+      {% if cola_ingredients %}
+        <h2>Cola Ingredients</h2>
+        <ul class="sub-list depth1">
+          {% for ingr in cola_ingredients %}
+            <li>{{ ingr }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <h2>No ingredients added</h2>
+      {% endif %}
+      {% if ingredients.count %}
+        <h1>All Ingredients</h1>
+        <form method="post">
+          {% csrf_token %}
+          {{ cola_ingredient_form.as_p }}
+          <button type="submit">Add Ingredient</button>
+        </form>
+      {% endif %}
+    </div>
+    {% comment %} <div class="testing">{{ ingredients.0.name }}</div> {% endcomment %}
   </div>
 {% endblock %}

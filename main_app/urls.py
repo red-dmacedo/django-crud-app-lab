@@ -9,4 +9,14 @@ urlpatterns = [
     path('colas/<int:pk>/', views.ColaDetail.as_view(), name='cola-detail'),
     path('colas/<int:pk>/update/', views.ColaUpdate.as_view(), name='cola-update'),
     path('colas/<int:pk>/delete/', views.ColaDelete.as_view(), name='cola-delete'),
+    path(
+        'colas/<int:cola_id>/add-ingredient/<int:ingredient_id>/',
+        views.ColaIngredientCreate.as_view(),
+        name='add-ingredient'
+    ),
+    path(
+        'colas/<int:cola_id>/remove-ingredient/<int:ingredient_id>/',
+        views.RemoveIngrFromCola,
+        name='remove-ingredient'
+    ),
 ]

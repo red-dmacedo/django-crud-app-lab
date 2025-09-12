@@ -1,6 +1,11 @@
 /* import card and brand-img classes */
 /* @import 'cola_list.css'; */
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
 .page-content {
   width: 100%;
 }
