@@ -14,7 +14,7 @@ class ColaIngredientForm(forms.ModelForm):
 class IngredientForm(forms.ModelForm):
     class Meta:
         model = Ingredient
-        fields = '__all__'
+        fields = ['name']
         widgets = {
             'name': forms.TextInput
         }

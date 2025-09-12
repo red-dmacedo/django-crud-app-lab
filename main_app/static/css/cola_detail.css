@@ -4,10 +4,13 @@
 form {
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
+  padding: 10px;
 }
 
 .page-content {
   width: 100%;
+  font-size: small;
 }
 
 .card {

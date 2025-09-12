@@ -36,14 +36,19 @@
         <h2>No ingredients added</h2>
       {% endif %}
       {% if ingredients.count %}
-        <h1>All Ingredients</h1>
+        <h2>All Ingredients</h2>
         <form method="post">
           {% csrf_token %}
           {{ cola_ingredient_form.as_p }}
-          <button type="submit">Add Ingredient</button>
+          <button type="submit" name="attach_ingredient">Add Ingredient</button>
         </form>
       {% endif %}
+      <h2>Create Ingredient</h2>
+      <form method="post">
+        {% csrf_token %}
+        {{ ingredient_form.as_p }}
+          <button type="submit" name="create_ingredient">Create</button>
+      </form>
     </div>
-    {% comment %} <div class="testing">{{ ingredients.0.name }}</div> {% endcomment %}
   </div>
 {% endblock %}
