@@ -6,6 +6,8 @@ form {
   flex-direction: column;
   border: 1px solid black;
   padding: 10px;
+  box-shadow: var(--card-box-shadow);
+  border-radius: 10px;
 }
 
 .page-content {
