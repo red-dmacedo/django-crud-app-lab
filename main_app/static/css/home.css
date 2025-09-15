@@ -1,3 +1,27 @@
 .logo-container {
   width: 300px;
 }
+
+.login {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: var(--card-box-shadow);
+  border-radius: 10px;
+  max-width: 300px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.page-container {
+  gap: 40px;
+}

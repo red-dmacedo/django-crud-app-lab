@@ -1,13 +1,34 @@
 /* import card and brand-img classes */
 /* @import 'cola_list.css'; */
 
-form {
+button {
+  border-radius: 10px;
+}
+
+.form {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
   padding: 10px;
   box-shadow: var(--card-box-shadow);
   border-radius: 10px;
+}
+
+.delete-btn {
+  font-size: small;
+  background-color: rgb(255, 106, 106);
+}
+
+.delete-btn:hover {
+  background-color: white;
+}
+
+.flex-line {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  gap: 5px;
+  font-size: medium;
 }
 
 .page-content {
@@ -28,12 +49,13 @@ form {
 .card h2 {
   font-size: x-large;
 }
+
 .card p {
   font-size: large;
   font-weight: bold;
 }
 
-.brand-img img { 
+.brand-img img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;

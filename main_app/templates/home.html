@@ -5,10 +5,22 @@
 {% endblock %}
 
 {% block content %}
-  <div class="center">
-    <h1>Welcome to the Cola Collector!</h1>
-    <section class="logo-container">
-      <img id="dispenser" src="{% static 'images/drink-dispenser.svg' %}" alt="Text reads: Cola Collector" />
-    </section>
+  <h1 class="center">Welcome to the Cola Collector!</h1>
+  <div class="flex-row center page-container">
+    <div class="center">
+      <section class="logo-container">
+        <img id="dispenser" src="{% static 'images/drink-dispenser.svg' %}" alt="Text reads: Cola Collector" />
+      </section>
+    </div>
+    {% if not user.is_authenticated %}
+      <section>
+        <form action="{% url 'home' %}" method="post" class="login">
+          <h1>Login</h1>
+          {% csrf_token %} {{ form.as_p }}
+          <input type="hidden" name="next" value="{{ next }}" />
+          <button type="submit" class="btn submit">Login</button>
+        </form>
+      </section>
+    {% endif %}
   </div>
 {% endblock %}

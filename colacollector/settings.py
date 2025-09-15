@@ -127,3 +127,6 @@ CACHES = {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     }
 }
+LOGIN_URL = 'home'
+LOGIN_REDIRECT_URL = 'cola-index'
+LOGOUT_REDIRECT_URL = 'home'

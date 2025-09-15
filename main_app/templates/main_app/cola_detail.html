@@ -29,7 +29,20 @@
         <h2>Cola Ingredients</h2>
         <ul class="sub-list depth1">
           {% for ingr in cola_ingredients %}
-            <li>{{ ingr }}</li>
+            <li>
+              <div class="flex-line">
+                <form action="{% url 'cola-ingredient-increment' cola.id ingr.id %}">
+                  <button type="submit">+1</button>
+                </form>
+                <form action="{% url 'cola-ingredient-decrement' cola.id ingr.id %}">
+                  <button type="submit">-1</button>
+                </form>
+                {{ ingr }}
+                <form action="{% url 'cola-ingredient-delete' cola.id ingr.id %}">
+                  <button type="submit" class="delete-btn">Remove</button>
+                </form>
+              </div>
+            </li>
           {% endfor %}
         </ul>
       {% else %}
@@ -37,17 +50,17 @@
       {% endif %}
       {% if ingredients.count %}
         <h2>All Ingredients</h2>
-        <form method="post">
+        <form method="post" class="form">
           {% csrf_token %}
           {{ cola_ingredient_form.as_p }}
           <button type="submit" name="attach_ingredient">Add Ingredient</button>
         </form>
       {% endif %}
       <h2>Create Ingredient</h2>
-      <form method="post">
+      <form method="post" class="form">
         {% csrf_token %}
         {{ ingredient_form.as_p }}
-          <button type="submit" name="create_ingredient">Create</button>
+        <button type="submit" name="create_ingredient">Create</button>
       </form>
     </div>
   </div>
